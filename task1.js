@@ -1,4 +1,4 @@
-// 🌟 Smooth Scroll for Internal Links
+// 🌟 Smooth Scroll for Navigation (if you add menu later)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function(e) {
         e.preventDefault();
@@ -12,62 +12,75 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-// 🌟 Reveal Sections on Scroll (Animation)
+// 🌟 Scroll Animation for Sections
 const sections = document.querySelectorAll("section");
 
-const revealOnScroll = () => {
-    const triggerBottom = window.innerHeight * 0.85;
+function revealSections() {
+    const windowHeight = window.innerHeight;
 
     sections.forEach(section => {
         const sectionTop = section.getBoundingClientRect().top;
 
-        if (sectionTop < triggerBottom) {
+        if (sectionTop < windowHeight - 100) {
             section.style.opacity = "1";
             section.style.transform = "translateY(0)";
         } else {
             section.style.opacity = "0";
-            section.style.transform = "translateY(50px)";
+            section.style.transform = "translateY(40px)";
         }
     });
-};
+}
 
-window.addEventListener("scroll", revealOnScroll);
-
-// Initial call
-revealOnScroll();
+window.addEventListener("scroll", revealSections);
+revealSections();
 
 
-// 🌟 Simple CTA Alert (Booking Action)
-const ctaButtons = document.querySelectorAll(".cta");
+// 🌟 CTA Click → Simulated Booking Message
+const ctas = document.querySelectorAll(".cta");
 
-ctaButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-        alert("Thank you! Our team will contact you shortly.");
+ctas.forEach(cta => {
+    cta.addEventListener("click", () => {
+        alert("✅ Appointment request received! Our clinic will contact you shortly.");
     });
 });
 
 
-// 🌟 Dynamic Greeting Based on Time
+// 🌟 Dynamic Greeting for Visitors
 const header = document.querySelector("header");
 
-const hours = new Date().getHours();
-let greeting = "";
+const hour = new Date().getHours();
+let message = "";
 
-if (hours < 12) {
-    greeting = "Good Morning!";
-} else if (hours < 18) {
-    greeting = "Good Afternoon!";
+if (hour < 12) {
+    message = "🌅 Good Morning! Take care of your skin today.";
+} else if (hour < 18) {
+    message = "☀️ Good Afternoon! Your skin deserves the best care.";
 } else {
-    greeting = "Good Evening!";
+    message = "🌙 Good Evening! Relax and rejuvenate your skin.";
 }
 
-const greetElement = document.createElement("p");
-greetElement.textContent = greeting;
-greetElement.style.marginTop = "10px";
-greetElement.style.fontWeight = "bold";
+const greeting = document.createElement("p");
+greeting.textContent = message;
+greeting.style.marginTop = "10px";
+greeting.style.fontWeight = "bold";
 
-header.appendChild(greetElement);
+header.appendChild(greeting);
 
 
-// 🌟 Console Branding (for developers 😎)
-console.log("🚀 AI Website Copy Generator Loaded Successfully!");
+// 🌟 Highlight Services on Hover (Interactive Feel)
+const services = document.querySelectorAll("h3");
+
+services.forEach(service => {
+    service.addEventListener("mouseover", () => {
+        service.style.color = "#4a90e2";
+        service.style.cursor = "pointer";
+    });
+
+    service.addEventListener("mouseout", () => {
+        service.style.color = "#34495e";
+    });
+});
+
+
+// 🌟 Console Branding
+console.log("💙 GlowCare Skin Clinic Website Loaded Successfully!");
