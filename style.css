@@ -1,18 +1,15 @@
-/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* BODY */
 body {
     font-family: Arial, sans-serif;
     background: #f4f8ff;
     color: #333;
 }
 
-/* HEADER */
 header {
     background: linear-gradient(135deg, #4a90e2, #2c6ecb);
     color: white;
@@ -20,15 +17,6 @@ header {
     padding: 40px;
 }
 
-header h1 {
-    font-size: 32px;
-}
-
-header p {
-    margin-top: 10px;
-}
-
-/* SECTIONS */
 section {
     background: white;
     margin: 20px auto;
@@ -39,14 +27,12 @@ section {
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
 
-/* SERVICES */
 .service {
-    margin-top: 15px;
+    margin-top: 10px;
     padding: 10px;
     border-left: 4px solid #4a90e2;
 }
 
-/* BUTTON */
 .btn {
     background: #4a90e2;
     color: white;
@@ -54,14 +40,12 @@ section {
     padding: 12px 20px;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 10px;
 }
 
 .btn:hover {
     background: #357ABD;
 }
 
-/* FOOTER */
 footer {
     text-align: center;
     background: #4a90e2;
