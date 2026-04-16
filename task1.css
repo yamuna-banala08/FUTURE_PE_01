@@ -8,79 +8,84 @@
 /* BODY */
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    line-height: 1.6;
-    background: #f4f7fb;
+    background: #f4f9ff;
     color: #333;
+    line-height: 1.6;
 }
 
 /* HEADER */
 header {
-    background: linear-gradient(135deg, #4a90e2, #357ABD);
+    background: linear-gradient(135deg, #4a90e2, #2c6ecb);
     color: white;
     text-align: center;
-    padding: 30px 20px;
+    padding: 40px 20px;
 }
 
 header h1 {
-    font-size: 32px;
+    font-size: 36px;
+    margin-bottom: 10px;
 }
 
 header p {
-    font-size: 16px;
-    opacity: 0.9;
+    font-size: 18px;
+    opacity: 0.95;
 }
 
-/* SECTIONS */
+/* SECTION */
 section {
-    background: #ffffff;
-    margin: 20px auto;
+    background: white;
+    margin: 25px auto;
     padding: 25px;
     width: 90%;
     max-width: 900px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+
+    /* Animation default state */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.5s ease;
 }
 
 /* HEADINGS */
 h2 {
-    margin-bottom: 10px;
     color: #2c3e50;
+    margin-bottom: 10px;
     border-left: 5px solid #4a90e2;
     padding-left: 10px;
 }
 
 h3 {
-    margin-top: 15px;
     color: #34495e;
+    margin-top: 15px;
 }
 
-/* LISTS */
-ul {
-    margin-left: 20px;
-    margin-top: 10px;
+/* TEXT */
+p {
+    margin-top: 8px;
 }
 
-li {
-    margin-bottom: 8px;
-}
-
-/* PROMPT BOX */
-pre {
-    background: #f0f4ff;
-    padding: 15px;
-    border-radius: 8px;
-    overflow-x: auto;
-    border-left: 4px solid #4a90e2;
-}
-
-/* CTA BOXES */
+/* CTA BOX */
 .cta {
     background: #eaf3ff;
     padding: 15px;
-    margin: 10px 0;
+    margin: 12px 0;
     border-left: 5px solid #4a90e2;
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: 500;
+    transition: 0.3s;
+}
+
+/* CTA HOVER */
+.cta:hover {
+    background: #d6eaff;
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+/* CONTACT SECTION */
+section:last-of-type p {
+    font-size: 15px;
 }
 
 /* FOOTER */
@@ -89,19 +94,22 @@ footer {
     background: #4a90e2;
     color: white;
     padding: 15px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
-/* HOVER EFFECTS */
+/* HOVER EFFECT FOR SECTIONS */
 section:hover {
-    transform: translateY(-3px);
-    transition: 0.3s;
+    transform: translateY(-5px);
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE DESIGN */
 @media (max-width: 600px) {
     header h1 {
-        font-size: 24px;
+        font-size: 26px;
+    }
+
+    header p {
+        font-size: 14px;
     }
 
     section {
